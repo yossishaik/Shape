@@ -1,0 +1,56 @@
+package com.coralbeauty.shape;
+
+import android.graphics.Color;
+
+/**
+ * Created by Colombia on 9/3/2015.
+ */
+public class OurShape {
+    //הגדרת משתנים בקלאס
+    private int x;
+    private int y;
+    private int color;
+
+    // הגדרת בנאי ברירת מחדל
+    public OurShape() {
+
+        x = 0;
+        y = 0;
+        color = Color.BLUE;
+
+    }
+//הגדרת בנאי לפי בחירת המשתמש
+    public OurShape(int x, int y, int color) {
+
+        this.x = x;
+        this.y = y;
+        this.color = color;
+    }
+// הגדרה אוטומטית של הג'אוה של קבלת משתנה מהקלאס והגדרת משתנים בקלאס
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public int getColor() {
+        return color;
+    }
+
+    public void setColor(int color) {
+        this.color = color;
+    }
+
+
+
+}
