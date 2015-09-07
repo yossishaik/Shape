@@ -1,23 +1,34 @@
 package com.coralbeauty.shape;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
+
+    RelativeLayout board;
+    Circle circle;
+    Rectangle rect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Circle circle=new Circle();
-        Rectangle rectangle=new Rectangle(50,50, Color.BLACK,130,80);
-        Log.i("Message",Integer.toString(rectangle.getWidth()));
+
+        board=(RelativeLayout) findViewById(R.id.rlBoard);
+        circle=new Circle(this);
+        rect=new Rectangle(this);
+        //board.addView(circle);
+        board.addView(rect);
 
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

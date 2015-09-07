@@ -1,6 +1,9 @@
 package com.coralbeauty.shape;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 
 /**
  * Created by Colombia on 9/3/2015.
@@ -10,18 +13,20 @@ public class Rectangle extends OurShape{
     private int width;
     private int height;
 
-    public Rectangle(){
+    public Rectangle(Context context){
+        super(context);
 
-        width=100;
-        height=50;
+        width=400;
+        height=200;
 
-        setX(0);
-        setY(0);
-        setColor(Color.BLACK);
+        setX(600);
+        setY(600);
+        setColor(Color.BLUE);
 
     }
 
-    public Rectangle(int x, int y, int color, int width, int height){
+    public Rectangle(int x, int y, int color, int width, int height, Context context){
+        super(context);
 
         setX(x);
         setY(y);
@@ -32,7 +37,7 @@ public class Rectangle extends OurShape{
 
     }
 
-    public int getWidth() {
+    public int getwidth() {
         return width;
     }
 
@@ -40,11 +45,19 @@ public class Rectangle extends OurShape{
         this.width = width;
     }
 
-    public int getHeight() {
+    public int getheight() {
         return height;
     }
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        Paint paint =new Paint();
+        paint.setColor(getColor());
+        canvas.drawCircle(getx(), gety(), 150, paint);
     }
 }
