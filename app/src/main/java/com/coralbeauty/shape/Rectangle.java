@@ -16,8 +16,8 @@ public class Rectangle extends OurShape{
     public Rectangle(Context context){
         super(context);
 
-        width=400;
-        height=200;
+        width=1000;
+        height=800;
 
         setX(600);
         setY(600);
@@ -58,6 +58,6 @@ public class Rectangle extends OurShape{
         super.onDraw(canvas);
         Paint paint =new Paint();
         paint.setColor(getColor());
-        canvas.drawCircle(getx(), gety(), 150, paint);
+        canvas.drawRect(getx(),gety(),getwidth(),getheight(),paint);
     }
 }

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         board=(RelativeLayout) findViewById(R.id.rlBoard);
         circle=new Circle(this);
         rect=new Rectangle(this);
-        //board.addView(circle);
+        board.addView(circle);
         board.addView(rect);
 
     }
